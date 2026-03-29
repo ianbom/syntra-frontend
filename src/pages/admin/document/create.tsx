@@ -99,7 +99,7 @@ const CreateDocumentPage = () => {
                   <Button
                     variant="ghost"
                     size="icon"
-                    onClick={() => navigate("/admin/document/list")}
+                    onClick={() => navigate("/admin/document")}
                   >
                     <IconArrowLeft className="size-5" />
                   </Button>
@@ -137,7 +137,7 @@ const CreateDocumentPage = () => {
                   <div className="flex items-center justify-between gap-4">
                     <Button
                       variant="outline"
-                      onClick={() => navigate("/admin/document/list")}
+                      onClick={() => navigate("/admin/document")}
                     >
                       Batal
                     </Button>

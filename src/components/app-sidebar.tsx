@@ -119,7 +119,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             >
               <Link to="/">
                 <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Syntra FS</span>
+                <span className="text-base font-semibold">Syntra AI</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

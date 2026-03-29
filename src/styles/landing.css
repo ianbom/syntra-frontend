@@ -1,0 +1,272 @@
+/* ========================================
+   SYNTRA AI LANDING PAGE STYLES
+   Minimalist Monochrome Design
+   ======================================== */
+
+/* ========================================
+   CSS CUSTOM PROPERTIES
+   ======================================== */
+:root {
+  /* Minimalist Light Mode - Pure Black & White */
+  --landing-bg: #ffffff;
+  --landing-bg-secondary: #fafafa;
+  --landing-bg-tertiary: #f5f5f5;
+  --landing-text: #0a0a0a;
+  --landing-text-secondary: #525252;
+  --landing-text-tertiary: #a3a3a3;
+  --landing-accent: #0a0a0a;
+  --landing-accent-secondary: #262626;
+  --landing-accent-muted: #404040;
+  --landing-glass: rgba(255, 255, 255, 0.8);
+  --landing-glass-border: rgba(0, 0, 0, 0.08);
+  --landing-glow: rgba(0, 0, 0, 0.05);
+  --landing-card-bg: #ffffff;
+  --landing-neural-line: rgba(0, 0, 0, 0.06);
+  --landing-neural-node: rgba(0, 0, 0, 0.15);
+  --landing-particle: rgba(0, 0, 0, 0.08);
+  --landing-border: rgba(0, 0, 0, 0.1);
+  --landing-border-hover: rgba(0, 0, 0, 0.2);
+}
+
+.dark {
+  /* Minimalist Dark Mode - Pure Black & White */
+  --landing-bg: #0a0a0a;
+  --landing-bg-secondary: #0f0f0f;
+  --landing-bg-tertiary: #171717;
+  --landing-text: #fafafa;
+  --landing-text-secondary: #a3a3a3;
+  --landing-text-tertiary: #525252;
+  --landing-accent: #ffffff;
+  --landing-accent-secondary: #e5e5e5;
+  --landing-accent-muted: #d4d4d4;
+  --landing-glass: rgba(10, 10, 10, 0.8);
+  --landing-glass-border: rgba(255, 255, 255, 0.08);
+  --landing-glow: rgba(255, 255, 255, 0.03);
+  --landing-card-bg: #0f0f0f;
+  --landing-neural-line: rgba(255, 255, 255, 0.04);
+  --landing-neural-node: rgba(255, 255, 255, 0.12);
+  --landing-particle: rgba(255, 255, 255, 0.06);
+  --landing-border: rgba(255, 255, 255, 0.1);
+  --landing-border-hover: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+.font-syne {
+  font-family: 'Syne', system-ui, sans-serif;
+}
+
+.font-outfit {
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+
+/* ========================================
+   ANIMATIONS - Subtle & Refined
+   ======================================== */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes line-draw {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.7s ease-out forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Glass morphism - subtle */
+.glass {
+  background: var(--landing-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--landing-glass-border);
+}
+
+/* Text styles */
+.text-gradient {
+  background: linear-gradient(135deg, var(--landing-text) 0%, var(--landing-text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px var(--landing-glow);
+}
+
+/* Button shine effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-shine:hover::before {
+  left: 100%;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

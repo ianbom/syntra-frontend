@@ -1,8 +1,17 @@
+export interface DocumentReference {
+  id: string
+  title: string
+  excerpt: string
+  pageNumber: number
+  documentUrl: string
+}
+
 export interface Message {
   id: string
   content: string
   role: "user" | "assistant"
   timestamp: Date
+  references?: DocumentReference[]
 }
 
 export interface Chat {
