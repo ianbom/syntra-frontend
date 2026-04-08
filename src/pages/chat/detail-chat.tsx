@@ -26,6 +26,8 @@ const DetailChatPage = () => {
       return
     }
 
+    //
+
     const chat = chatStore.getChat(id)
     if (chat) {
       setMessages(chat.messages)
@@ -111,7 +113,7 @@ const DetailChatPage = () => {
                   <h1 className="font-semibold text-sm line-clamp-1 max-w-[200px] sm:max-w-md">
                     {chatTitle || "Chat"}
                   </h1>
-                  <p className="text-xs text-muted-foreground">Asisten AI</p>
+                  <p className="text-xs text-muted-foreground">Syntra AI</p>
                 </div>
               </div>
 
